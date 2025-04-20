@@ -1,26 +1,25 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Transformation matrix
-T = np.array([
-              [1,.5],
-              [0,.5]
-            ])
+# Matriz de transformação
+T = np.array([[1,.5], [0,.5]])
 
 
-# define the set of points (a circle)
+# Define o conjunto de pontos do círculo
 theta = np.linspace(0,2*np.pi-2*np.pi/20,20)
-origPoints = np.vstack( (np.cos(theta),np.sin(theta)) )
-
-# apply transformation
-transformedPoints = T @ origPoints
+pontos_originais = np.vstack( (np.cos(theta),np.sin(theta)) )
 
 
-# plot the points
+
+# Aplicada a tranformação do pontos originais com base na matriz de transformação
+pontos_transformados = T @ pontos_originais
+
+print(len(pontos_transformados[0]), len(pontos_transformados[1]))
+
+# Plota os pontos no gráfico
 plt.figure(figsize=(6,6))
-plt.plot(origPoints[0,:],origPoints[1,:],'ko',label='Original')
-plt.plot(transformedPoints[0,:],transformedPoints[1,:],'s',
-         color=[.7,.7,.7],label='Transformados')
+plt.plot(pontos_originais[0,:],pontos_originais[1,:],'ko',label='Pontos originais')
+plt.plot(pontos_transformados[0,:],pontos_transformados[1,:],'s', color=[.7,.7,.7],label='Pontos transformados')
 
 plt.axis('square')
 plt.xlim([-2,2])
