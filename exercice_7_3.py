@@ -14,7 +14,6 @@ pontos_originais = np.vstack( (np.cos(theta),np.sin(theta)) )
 # Aplicada a tranformação do pontos originais com base na matriz de transformação
 pontos_transformados = T @ pontos_originais
 
-print(len(pontos_transformados[0]), len(pontos_transformados[1]))
 
 # Plota os pontos no gráfico
 plt.figure(figsize=(6,6))
