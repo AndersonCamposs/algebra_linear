@@ -5,13 +5,15 @@ import numpy as np
 T = np.array([[1,.5], [0,.5]])
 
 
-# Define o conjunto de pontos do círculo
+# criação de 20 ângulos radianos igualmente espaçados, começando em 0
+# e indo até 2 vezes pi menos 2 vezes pi divido por 20 (qtd pontos)
 theta = np.linspace(0,2*np.pi-2*np.pi/20,20)
+
+# Define o conjunto de pontos do círculo
 pontos_originais = np.vstack( (np.cos(theta),np.sin(theta)) )
 
 
 
-# Aplicada a tranformação do pontos originais com base na matriz de transformação
 pontos_transformados = T @ pontos_originais
 
 
@@ -26,3 +28,5 @@ plt.ylim([-2,2])
 plt.legend()
 #plt.savefig('Figure_07_08.png',dpi=300)
 plt.show()
+
+plt.savefig('300dpi')

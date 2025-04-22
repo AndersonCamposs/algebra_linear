@@ -8,10 +8,8 @@ rc('animation', html='jshtml')
 
 # função para desenhar a plotagem no gráfico
 def aframe(ph):
-
   # cria a matriz de transformação
   A = np.array([ [  1-ph/3,0 ], [  0,ph   ] ])
-
   # aplica a transformação dos pontos usando a matriz de transformação
   P1 = A @ Y1
   P2 = A @ Y2
@@ -19,10 +17,8 @@ def aframe(ph):
   # atualiza as linhas inferiores e superiores
   plth1.set_xdata(P1[0,:])
   plth1.set_ydata(P1[1,:])
-
   plth2.set_xdata(P2[0,:])
   plth2.set_ydata(P2[1,:])
-
   # exporta os manipuladores da plotagem
   return (plth1,plth2)
 
