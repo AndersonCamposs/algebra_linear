@@ -30,9 +30,9 @@ Y2 = np.vstack((theta,np.sin(theta)))
 
 # configura a figura
 fig,ax = plt.subplots(1,figsize=(12,6))
-
-plth1, = ax.plot(Y1[0,:],Y1[1,:],'ko')
-plth2, = ax.plot(Y2[0,:],Y2[1,:],'s',color=[.7,.7,.7])
+# plotagem inicial
+plth1, = ax.plot(Y1[0,:],Y1[1,:],'ko') # plota Cosseno de preta
+plth2, = ax.plot(Y2[0,:],Y2[1,:],'s',color=[.7,.7,.7]) # plota Seno de cinza
 ax.set_ylim([-2,2])
 
 
